@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>HaitiChat - Découvrir Haïti</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Icone de l'onglet -->
+  <link rel="shorcut icon" href="./Screenshot_2026-08-14-16-05-10-1.png">
+<img src="./Gemini_Generated_Image_rr5yuvrr5yuvrr5y.jfif" alt="logo de l'application" style="display:none;">
+
+</head>
+
+<body>
+  <header class="navbar">
+    <div>
+      <div class="logo">HAÏTI<span>CHAT</span></div>
+      <button class="btn" id="btn" type="button" aria-expanded="false" aria-controls="settingsPanel">⚙ Paramètres</button>
+      <section id="settingsPanel" class="settings-panel hidden" aria-label="Paramètres">
+        <label for="searchLanguage">Langue de recherche</label>
+        <select id="searchLanguage">
+          <option value="fr">Français</option>
+          <option value="ht">Kreyòl ayisyen</option>
+        </select>
+        <label for="resultLimit">Nombre de résultats</label>
+        <select id="resultLimit">
+          <option value="20">20</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+          <option value="200">200</option>
+          <option value="500">500</option>
+          <option value="1000">1 000</option>
+        </select>
+        <label for="themeSelect">Thème</label>
+        <select id="themeSelect">
+          <option value="light">Clair</option>
+          <option value="dark">Sombre</option>
+        </select>
+      </section>
+    </div>
+  </header>
+  <header class="dewin">
+    <button id="accountButton" class="account-button" type="button">Kont</button>
+    <div class="app-laucher">
+      <button id="app-menu-htn" class="menu-htn" aria-label="Applications google">
+        <svg width="24" height="24" viewbox="0 0 24 24">
+          <path fill="#5f6368"
+            d="M6,8 C7.1045695,8 8,7.1045695 8,6 C8,4.8954305 7.1045695,4 6,4 C4.8954305,4 4,4.8954305 4,6 C4,7.1045695 4.8954305,8 6,8 Z M12,8 C13.1045695,8 14,7.1045695 14,6 C14,4.8954305 13.1045695,4 12,4 C10.8954305,4 10,4.8954305 10,6 C10,7.1045695 10.8954305,8 12,8 Z M18,8 C19.1045695,8 20,7.1045695 20,6 C20,4.8954305 19.1045695,4 18,4 C16.8954305,4 16,4.8954305 16,6 C16,7.1045695 16.8954305,8 18,8 Z M6,14 C7.1045695,14 8,13.1045695 8,12 C8,10.8954305 7.1045695,10 6,10 C4.8954305,10 4,10.8954305 4,12 C4,13.1045695 4.8954305,14 6,14 Z M12,14 C13.1045695,14 14,13.1045695 14,12 C14,10.8954305 13.1045695,10 12,10 C10.8954305,10 10,10.8954305 10,12 C10,13.1045695 10.8954305,14 12,14 Z M18,14 C19.1045695,14 20,13.1045695 20,12 C20,10.8954305 19.1045695,10 18,10 C16.8954305,10 16,10.8954305 16,12 C16,13.1045695 16.8954305,14 18,14 Z M6,20 C7.1045695,20 8,19.1045695 8,18 C8,16.8954305 7.1045695,16 6,16 C4.8954305,16 4,16.8954305 4,18 C4,19.1045695 4.8954305,20 6,20 Z M12,20 C13.1045695,20 14,19.1045695 14,18 C14,16.8954305 13.1045695,16 12,16 C10.8954305,16 10,16.8954305 10,18 C10,19.1045695 10.8954305,20 12,20 Z M18,20 C19.1045695,20 20,19.1045695 20,18 C20,16.8954305 19.1045695,16 18,16 C16.8954305,16 16,16.8954305 16,18 C16,19.1045695 16.8954305,20 18,20 Z">
+          </path>
+        </svg>
+      </button>
+      <div id="appMenuGoogle" class="apps-dropdown hidden">
+        <div class="app-grid">
+          <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" class="app-card">
+            <svg viewBox="0 0 24 24" width="32" height="32" aria-hidden="true">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z" />
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.13 0-5.78-2.11-6.73-4.96H1.2v3.15C3.15 21.32 7.23 24 12 24z" />
+              <path fill="#FBBC05" d="M5.27 14.24c-.25-.72-.38-1.49-.38-2.24s.13-1.52.38-2.24V6.61H1.2C.43 8.15 0 9.87 0 11.7s.43 3.55 1.2 5.09l4.07-2.55z" />
+              <path fill="#EA4335" d="M12 4.75c1.76 0 3.34.61 4.59 1.8l3.43-3.43C17.95 1.19 15.24 0 12 0 7.23 0 3.15 2.68 1.2 6.61l4.07 3.15c.95-2.85 3.6-4.96 6.73-4.96z" />
+            </svg>
+            <span>Google</span>
+          </a>
+          <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="app-card">
+            <svg viewBox="0 0 24 24" width="32" height="32" aria-hidden="true">
+              <path fill="#EA4335" d="M12 0C7.58 0 4 3.58 4 8c0 5.25 8 16 8 16s8-10.75 8-16c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z" />
+            </svg>
+            <span>Maps</span>
+          </a>
+          <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="app-card">
+            <svg viewBox="0 0 24 24" width="32" height="32" aria-hidden="true">
+              <path fill="#FF0000" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
+            <span>YouTube</span>
+          </a>
+          <a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer" class="app-card">
+            <svg viewBox="0 0 24 24" width="32" height="32" aria-hidden="true">
+              <path fill="#4285F4" d="M12 24C12 17.373 6.627 12 0 12C6.627 12 12 6.627 12 0C12 6.627 17.373 12 24 12C17.373 12 12 17.373 12 24Z" />
+            </svg>
+            <span>Gemini</span>
+          </a>
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="app-card">
+            <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true">
+              <circle cx="16" cy="16" r="16" fill="#1877F2" />
+              <path fill="#fff" d="M18.1 27V17.4h3.2l.5-3.7h-3.7v-2.4c0-1.1.3-1.8 1.9-1.8H22V6.2c-.4-.1-1.6-.2-3-.2-3 0-5.1 1.8-5.1 5.2v2.5h-3.4v3.7h3.4V27h4.2z" />
+            </svg>
+            <span>Facebook</span>
+          </a>
+          <a href="https://pocketoption.com" target="_blank" rel="noopener noreferrer" class="app-card">
+            <span class="pocket-option-icon" aria-hidden="true">P</span>
+            <span>Pocket Option</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <dialog id="accountDialog" class="account-dialog" aria-labelledby="accountTitle">
+    <button id="closeAccountDialog" class="dialog-close" type="button" aria-label="Fèmen">×</button>
+    <h2 id="accountTitle">Kreye kont</h2>
+    <p id="accountStatus" class="account-status" role="status" aria-live="polite"></p>
+    <form id="accountForm">
+      <label for="accountEmail">Imèl</label>
+      <input id="accountEmail" name="email" type="email" autocomplete="email" required>
+      <label for="accountPassword">Modpas</label>
+      <input id="accountPassword" name="password" type="password" autocomplete="new-password" minlength="8" required>
+      <button id="accountSubmit" class="account-submit" type="submit">Kreye kont</button>
+    </form>
+    <button id="accountModeToggle" class="account-mode-toggle" type="button">Ou deja gen kont? Konekte</button>
+    <div id="signedInPanel" class="signed-in-panel" hidden>
+      <p id="signedInEmail"></p>
+      <button id="signOutButton" class="account-submit" type="button">Dekonekte</button>
+    </div>
+  </dialog>
+
+  <main class="search-home">
+    <img class="hero-image" src="image.jpg" alt="Carte illustrée des départements d'Haïti">
+    <p class="eyebrow">KONEKTE AK PEYI NOU</p>
+    <h1>Que voulez-vous savoir sur Haïti&nbsp;?</h1>
+    <p class="intro">Fè rechèch, dekouvri istwa, kilti ak bèl kote peyi nou an.</p>
+    <form id="searchForm" class="search-box">
+      <label class="sr-only" for="query">Rechercher sur Haïti</label>
+      <span class="search-icon" aria-hidden="true"></span>
+      <input type="search" id="query" placeholder="Rechercher sur Haïti..." aria-label="Rechercher sur Haïti">
+      <button type="submit">Rechercher</button>
+    </form>
+    <nav id="searchCategories" class="search-categories" aria-label="Kategori rechèch" hidden>
+      <button class="category-button" type="button" data-category="all" aria-pressed="true">Tout</button>
+      <button class="category-button" type="button" data-category="images" aria-pressed="false">Imaj</button>
+      <button class="category-button" type="button" data-category="videos" aria-pressed="false">Videyo</button>
+      <button class="category-button" type="button" data-category="news" aria-pressed="false">Nouvèl</button>
+      <button class="category-button" type="button" data-category="books" aria-pressed="false">Liv</button>
+      <a class="category-button category-link" id="mapsCategory" href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">Kat</a>
+    </nav>
+    <div id="results" class="results" role="status" aria-live="polite"></div>
+    <p class="search-hint">Egzanp: Istwa Sitadèl la, depatman Nò, kilti ayisyen</p>
+  </main>
+  <script>
+
+    const btn = document.getElementById('btn');
+    const settingsPanel = document.getElementById('settingsPanel');
+    btn.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const isOpen = !settingsPanel.classList.contains('hidden');
+      settingsPanel.classList.toggle('hidden', isOpen);
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+    document.addEventListener('click', (event) => {
+      if (!settingsPanel.contains(event.target) && !btn.contains(event.target)) {
+        btn.setAttribute('aria-expanded', 'false');
+        settingsPanel.classList.add('hidden');
+      }
+    });
+  </script>
+  <script>
+    const menuHtn = document.getElementById('app-menu-htn');
+    const menuAppGoogle = document.getElementById('appMenuGoogle');
+  
+    // Ouvrir/Fermer au clic sur le bouton
+    menuHtn.addEventListener('click', (event) => {
+      event.stopPropagation();
+      menuAppGoogle.classList.toggle('hidden');
+    });
+
+    // Fermer le menu si l'on clique en dehors
+    document.addEventListener('click', (event) => {
+      if (!menuAppGoogle.contains(event.target) && !menuHtn.contains(event.target)) {
+        menuAppGoogle.classList.add('hidden');
+      }
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const accountButton = document.getElementById('accountButton');
+    const accountDialog = document.getElementById('accountDialog');
+    const accountForm = document.getElementById('accountForm');
+    const accountTitle = document.getElementById('accountTitle');
+    const accountStatus = document.getElementById('accountStatus');
+    const accountSubmit = document.getElementById('accountSubmit');
+    const accountModeToggle = document.getElementById('accountModeToggle');
+    const accountPassword = document.getElementById('accountPassword');
+    const signedInPanel = document.getElementById('signedInPanel');
+    const signedInEmail = document.getElementById('signedInEmail');
+    const signOutButton = document.getElementById('signOutButton');
+    let authClient;
+    let authInitializationError = 'Sèvis kont yo ap prepare.';
+    let authMode = 'signup';
+
+    function setAccountMode(mode) {
+      authMode = mode;
+      const isSignup = mode === 'signup';
+      accountTitle.textContent = isSignup ? 'Kreye kont' : 'Konekte';
+      accountSubmit.textContent = isSignup ? 'Kreye kont' : 'Konekte';
+      accountPassword.autocomplete = isSignup ? 'new-password' : 'current-password';
+      accountModeToggle.textContent = isSignup
+        ? 'Ou deja gen kont? Konekte'
+        : 'Ou poko gen kont? Kreye youn';
+      accountStatus.textContent = '';
+    }
+
+    function showAccount(user) {
+      const isSignedIn = Boolean(user);
+      accountForm.hidden = isSignedIn;
+      signedInPanel.hidden = !isSignedIn;
+      accountModeToggle.hidden = isSignedIn;
+      if (user) {
+        signedInEmail.textContent = user.email || '';
+        accountStatus.textContent = 'Ou konekte sou kont ou.';
+      } else {
+        setAccountMode(authMode);
+      }
+    }
+
+    accountButton.addEventListener('click', () => {
+      if (!accountDialog.open) accountDialog.showModal();
+      if (!authClient) accountStatus.textContent = authInitializationError;
+    });
+
+    document.getElementById('closeAccountDialog').addEventListener('click', () => {
+      accountDialog.close();
+    });
+
+    accountDialog.addEventListener('click', (event) => {
+      if (event.target === accountDialog) accountDialog.close();
+    });
+
+    accountModeToggle.addEventListener('click', () => {
+      setAccountMode(authMode === 'signup' ? 'login' : 'signup');
+    });
+
+    accountForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!authClient) {
+        accountStatus.textContent = authInitializationError;
+        return;
+      }
+
+      accountSubmit.disabled = true;
+      accountStatus.textContent = 'Tanpri tann...';
+      const email = document.getElementById('accountEmail').value.trim();
+      const password = accountPassword.value;
+      try {
+        const result = authMode === 'signup'
+          ? await authClient.auth.signUp({ email, password })
+          : await authClient.auth.signInWithPassword({ email, password });
+
+        if (result.error) {
+          accountStatus.textContent = result.error.message;
+        } else if (authMode === 'signup' && !result.data.session) {
+          accountStatus.textContent = 'Verifye imèl ou pou aktive kont lan.';
+          accountForm.reset();
+        } else {
+          accountStatus.textContent = 'Koneksyon an reyisi.';
+        }
+      } catch (error) {
+        accountStatus.textContent = error.message || 'Pa t kapab konekte. Eseye ankò.';
+      } finally {
+        accountSubmit.disabled = false;
+      }
+    });
+
+    signOutButton.addEventListener('click', async () => {
+      const { error } = await authClient.auth.signOut();
+      accountStatus.textContent = error ? error.message : 'Ou dekonekte.';
+      if (!error) {
+        accountForm.reset();
+        setAccountMode('login');
+      }
+    });
+
+    async function initializeAccounts() {
+      try {
+        const response = await fetch('/auth-config', { headers: { Accept: 'application/json' } });
+        const config = await response.json();
+        if (!response.ok) throw new Error(config.error || 'Konfigirasyon kont yo pa disponib.');
+        if (!window.supabase?.createClient) {
+          throw new Error('Sèvis koneksyon an pa t ka chaje. Verifye koneksyon entènèt la.');
+        }
+        authClient = window.supabase.createClient(config.url, config.publishableKey);
+        authInitializationError = '';
+        authClient.auth.onAuthStateChange((_event, session) => showAccount(session?.user || null));
+        const { data, error } = await authClient.auth.getSession();
+        if (error) throw error;
+        showAccount(data.session?.user || null);
+      } catch (error) {
+        authInitializationError = error.message;
+        accountStatus.textContent = authInitializationError;
+      }
+    }
+
+    initializeAccounts();
+  </script>
+  <script>
+  const searchForm = document.getElementById('searchForm');
+  const searchInput = document.getElementById('query');
+  const searchResults = document.getElementById('results');
+  const searchCategories = document.getElementById('searchCategories');
+  const mapsCategory = document.getElementById('mapsCategory');
+  const searchLanguage = document.getElementById('searchLanguage');
+  const resultLimit = document.getElementById('resultLimit');
+  const themeSelect = document.getElementById('themeSelect');
+  const settingsStorageKey = 'haitichat-settings';
+  const defaultSettings = { language: 'fr', limit: '100', theme: 'light' };
+  let settings = { ...defaultSettings };
+  let activeCategory = 'all';
+  let activeSearchController;
+
+  try {
+    const savedSettings = JSON.parse(localStorage.getItem(settingsStorageKey) || '{}');
+    if (['fr', 'ht'].includes(savedSettings.language)) settings.language = savedSettings.language;
+    if (['20', '50', '100', '200', '500', '1000'].includes(savedSettings.limit)) settings.limit = savedSettings.limit;
+    if (['light', 'dark'].includes(savedSettings.theme)) settings.theme = savedSettings.theme;
+  } catch (error) {
+    console.warn('Impossible de charger les paramètres enregistrés.', error);
+  }
+
+  searchLanguage.value = settings.language;
+  resultLimit.value = settings.limit;
+  themeSelect.value = settings.theme;
+  document.body.dataset.theme = settings.theme;
+
+  function saveSettings() {
+    try {
+      localStorage.setItem(settingsStorageKey, JSON.stringify(settings));
+    } catch (error) {
+      console.warn('Impossible d’enregistrer les paramètres.', error);
+    }
+  }
+
+  function updateSettings() {
+    settings.language = searchLanguage.value;
+    settings.limit = resultLimit.value;
+    settings.theme = themeSelect.value;
+    document.body.dataset.theme = settings.theme;
+    saveSettings();
+    const query = searchInput.value.trim();
+    if (query) runSearch(query, activeCategory);
+  }
+
+  searchLanguage.addEventListener('change', updateSettings);
+  resultLimit.addEventListener('change', updateSettings);
+  themeSelect.addEventListener('change', updateSettings);
+
+  function createSiteSource(url) {
+    const source = document.createElement('a');
+    const logo = document.createElement('img');
+    const siteName = document.createElement('span');
+    const siteUrl = new URL(url);
+
+    source.className = 'result-source';
+    source.href = siteUrl.origin;
+    source.target = '_blank';
+    source.rel = 'noopener noreferrer';
+    logo.src = `https://www.google.com/s2/favicons?domain_url=${encodeURIComponent(siteUrl.origin)}&sz=64`;
+    logo.alt = '';
+    logo.loading = 'lazy';
+    logo.referrerPolicy = 'no-referrer';
+    logo.addEventListener('error', () => logo.remove(), { once: true });
+    siteName.textContent = siteUrl.hostname.replace(/^www\./, '');
+    source.append(logo, siteName);
+    return source;
+  }
+
+  async function runSearch(query, category) {
+    activeSearchController?.abort();
+    activeSearchController = new AbortController();
+    document.querySelector('.search-home').classList.add('result-mode');
+    searchCategories.hidden = false;
+    for (const button of searchCategories.querySelectorAll('[data-category]')) {
+      button.setAttribute('aria-pressed', String(button.dataset.category === category));
+    }
+    mapsCategory.href = `https://www.google.com/maps/search/${encodeURIComponent(`${query} Haïti`)}`;
+    searchResults.replaceChildren();
+    searchResults.classList.toggle('image-results', category === 'images');
+    const loadingMessage = document.createElement('p');
+    loadingMessage.className = 'results-state';
+    loadingMessage.textContent = category === 'images' ? 'Ap chèche imaj...' : 'Ap chèche...';
+    searchResults.append(loadingMessage);
+
+    try {
+      const response = await fetch(
+        `/search?query=${encodeURIComponent(query)}&category=${encodeURIComponent(category)}&language=${encodeURIComponent(settings.language)}&limit=${encodeURIComponent(settings.limit)}`,
+        {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json'
+          },
+          signal: activeSearchController.signal
+        }
+      );
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'La recherche a échoué.');
+      }
+
+      searchResults.replaceChildren();
+      const summary = document.createElement('p');
+      summary.className = 'results-summary';
+      const categoryNames = {
+        all: 'Tout',
+        images: 'Imaj',
+        videos: 'Videyo',
+        news: 'Nouvèl',
+        books: 'Liv'
+      };
+      summary.textContent = `${categoryNames[category]} pou : ${query}`;
+      searchResults.append(summary);
+
+      if (data.length === 0) {
+        const emptyMessage = document.createElement('p');
+        emptyMessage.className = 'results-state';
+        emptyMessage.textContent = category === 'videos'
+          ? 'Pa jwenn videyo dirèk pou rechèch sa a. '
+          : 'Pa gen rezilta pou kategori sa a. Eseye yon lòt rechèch.';
+        searchResults.append(emptyMessage);
+        if (category === 'videos') {
+          const youtubeSearch = document.createElement('a');
+          youtubeSearch.href = `https://www.youtube.com/results?search_query=${encodeURIComponent(`${query} Haïti`)}`;
+          youtubeSearch.target = '_blank';
+          youtubeSearch.rel = 'noopener noreferrer';
+          youtubeSearch.textContent = 'Chèche videyo sa a sou YouTube';
+          searchResults.append(youtubeSearch);
+        }
+        return;
+      }
+
+      for (const item of data) {
+        if (category === 'videos' && /^[A-Za-z0-9_-]{11}$/.test(item.video_id || '')) {
+          const videoResult = document.createElement('article');
+          const player = document.createElement('iframe');
+          const videoTitle = document.createElement('h2');
+          const videoLink = document.createElement('a');
+          const videoDescription = document.createElement('p');
+          const source = createSiteSource(item.lien);
+          videoResult.className = 'video-result';
+          player.src = `https://www.youtube-nocookie.com/embed/${item.video_id}`;
+          player.title = item.titre || 'Videyo sou Haïti';
+          player.loading = 'lazy';
+          player.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+          player.allowFullscreen = true;
+          videoLink.href = item.lien;
+          videoLink.target = '_blank';
+          videoLink.rel = 'noopener noreferrer';
+          videoLink.textContent = item.titre || 'Gade videyo a sou YouTube';
+          videoTitle.append(videoLink);
+          videoDescription.className = 'result-description';
+          videoDescription.textContent = item.description;
+          videoResult.append(source, player, videoTitle, videoDescription);
+          searchResults.append(videoResult);
+          continue;
+        }
+
+        if (category === 'images' && item.image) {
+          const imageResult = document.createElement('article');
+          const imageLink = document.createElement('a');
+          const image = document.createElement('img');
+          const caption = document.createElement('p');
+          const source = createSiteSource(item.lien);
+          imageResult.className = 'image-result';
+          imageLink.href = item.lien;
+          imageLink.target = '_blank';
+          imageLink.rel = 'noopener noreferrer';
+          image.alt = item.titre || 'Imaj ki gen rapò ak rechèch la';
+          image.src = item.image;
+          image.loading = 'lazy';
+          caption.textContent = item.titre || item.description || '';
+          imageLink.append(image);
+          imageResult.append(imageLink, caption, source);
+          searchResults.append(imageResult);
+          continue;
+        }
+
+        const result = document.createElement('article');
+        const source = createSiteSource(item.lien);
+        const title = document.createElement('h2');
+        const link = document.createElement('a');
+        const description = document.createElement('p');
+
+        link.href = item.lien;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = item.titre;
+        result.className = 'result-item';
+        title.className = 'result-title';
+        description.textContent = item.description;
+        description.className = 'result-description';
+
+        title.append(link);
+        result.append(source, title, description);
+        searchResults.append(result);
+      }
+    } catch (error) {
+      if (error.name === 'AbortError') return;
+      searchResults.replaceChildren();
+      const errorMessage = document.createElement('p');
+      errorMessage.className = 'results-state';
+      errorMessage.textContent = error.message;
+      searchResults.append(errorMessage);
+    }
+  }
+
+  mapsCategory.href = `https://www.google.com/maps/search/${encodeURIComponent(`${searchInput.value.trim()} Haïti`)}`;
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.trim();
+    mapsCategory.href = `https://www.google.com/maps/search/${encodeURIComponent(query ? `${query} Haïti` : 'Haïti')}`;
+  });
+
+  searchForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const query = searchInput.value.trim();
+    if (!query) {
+      searchResults.textContent = 'Ekri sa w ap chèche a.';
+      return;
+    }
+    runSearch(query, activeCategory);
+  });
+
+  searchCategories.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-category]');
+    if (!button) return;
+    const query = searchInput.value.trim();
+    if (!query) return;
+    activeCategory = button.dataset.category;
+    runSearch(query, activeCategory);
+  });
+</script>
+</body>
+
+</html>
